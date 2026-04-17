@@ -4,7 +4,8 @@ import { RegisterDTO, LoginDTO } from '../types/auth';
 
 export const register = async (req: Request, res: Response) => {
   const { email, password }: RegisterDTO = req.body;
-
+  console.log("body");
+  console.log(req.body);
   try {
     const user = await registerUser(email, password);
     res.status(201).json(user);
